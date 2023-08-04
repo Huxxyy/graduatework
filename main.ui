@@ -1,0 +1,780 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Word2Img</class>
+ <widget class="QWidget" name="Word2Img">
+  <property name="windowModality">
+   <enum>Qt::NonModal</enum>
+  </property>
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>2500</width>
+    <height>1400</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>2500</width>
+    <height>1400</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>2500</width>
+    <height>1400</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>text2img</string>
+  </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <property name="inputMethodHints">
+   <set>Qt::ImhNone</set>
+  </property>
+  <widget class="QFrame" name="frame">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>2500</width>
+     <height>1400</height>
+    </rect>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>2500</width>
+     <height>1600</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+   <widget class="QWidget" name="verticalLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>20</y>
+      <width>2461</width>
+      <height>1421</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout" stretch="2,10,2">
+     <property name="spacing">
+      <number>14</number>
+     </property>
+     <property name="leftMargin">
+      <number>30</number>
+     </property>
+     <property name="topMargin">
+      <number>30</number>
+     </property>
+     <property name="rightMargin">
+      <number>30</number>
+     </property>
+     <property name="bottomMargin">
+      <number>30</number>
+     </property>
+     <item>
+      <widget class="QFrame" name="input_frame">
+       <property name="styleSheet">
+        <string notr="true">QFrame{
+	background-color:rgba(39, 40, 34, 150);
+	border-radius: 50px;
+	border-style:outset;
+}</string>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+       <widget class="QWidget" name="horizontalLayoutWidget">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>2401</width>
+          <height>211</height>
+         </rect>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout" stretch="0,4,0,18,0,2,0">
+         <property name="spacing">
+          <number>24</number>
+         </property>
+         <property name="leftMargin">
+          <number>20</number>
+         </property>
+         <property name="topMargin">
+          <number>10</number>
+         </property>
+         <property name="rightMargin">
+          <number>20</number>
+         </property>
+         <property name="bottomMargin">
+          <number>10</number>
+         </property>
+         <item>
+          <spacer name="horizontalSpacer_6">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QLabel" name="prompt_label">
+           <property name="mouseTracking">
+            <bool>false</bool>
+           </property>
+           <property name="autoFillBackground">
+            <bool>false</bool>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QLabel{
+	font: 35pt &quot;Lucida Handwriting&quot;;
+	color:rgb(248, 248, 242);
+	border: 0px;
+	background-color:rbga(0,0,0,0);
+}</string>
+           </property>
+           <property name="text">
+            <string>Prompt</string>
+           </property>
+           <property name="scaledContents">
+            <bool>false</bool>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+           <property name="wordWrap">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_7">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>30</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="prompt_inputLine">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Maximum">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>20</width>
+             <height>80</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QLineEdit {
+	border: 4px solid rgb(255, 255, 255); /* 边框宽度为1px，颜色为#A0A0A0 */
+	border-radius: 20px; /* 边框圆角 */
+	padding-left: 8px; /* 文本距离左边界有5px */
+	background-color: #F2F2F2; /* 背景颜色 */
+	color: #A0A0A0; /* 文本颜色 */
+	selection-background-color: #A0A0A0; /* 选中文本的背景颜色 */
+	selection-color: rgb(249, 38, 114, 200); /* 选中文本的颜色 */
+	font-family: &quot;Microsoft YaHei&quot;; /* 文本字体族 */
+	font-size: 14pt; /* 文本字体大小 */
+}
+
+QLineEdit:hover { /* 鼠标悬浮在QLineEdit时的状态 */
+	border: 4px solid rgb(249, 38, 114, 200);
+	background-color: #F2F2F2;
+	selection-background-color: #298DFF;
+	selection-color: rgb(249, 38, 114, 200); /* 选中文本的颜色 */
+	color:rgb(249, 38, 114, 200);
+}
+</string>
+           </property>
+           <property name="frame">
+            <bool>false</bool>
+           </property>
+           <property name="cursorPosition">
+            <number>0</number>
+           </property>
+           <property name="placeholderText">
+            <string>Input a prompt to start...</string>
+           </property>
+           <property name="cursorMoveStyle">
+            <enum>Qt::LogicalMoveStyle</enum>
+           </property>
+           <property name="clearButtonEnabled">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_2">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>10</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QPushButton" name="start_button">
+           <property name="styleSheet">
+            <string notr="true">QPushButton{
+	background-color:rgba(255, 255, 255, 0);                        
+	border-radius:20px;
+	font: 20pt &quot;Eras Bold ITC&quot;;
+	color:rgb(248, 248, 242);      
+	padding:6px;             
+}
+
+QPushButton:pressed{
+	border-color:rgba(249, 38, 114, 250);
+	border:4px solid rgba(249, 38, 114, 250);
+	color:rgb(249, 38, 114, 250);
+}
+
+QPushButton:hover{
+	background-color:rgba(255, 255, 255, 10);
+	border:4px solid rgba(249, 38, 114, 200);
+	color:rgb(249, 38, 114, 250);
+}</string>
+           </property>
+           <property name="text">
+            <string>Start</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>10</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="word_style" native="true">
+        <property name="geometry">
+         <rect>
+          <x>40</x>
+          <y>130</y>
+          <width>400</width>
+          <height>15</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color:rgb(249, 38, 114, 200);</string>
+        </property>
+       </widget>
+       <widget class="QWidget" name="word_style_2" native="true">
+        <property name="geometry">
+         <rect>
+          <x>50</x>
+          <y>110</y>
+          <width>400</width>
+          <height>10</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color:rgb(249, 38, 114, 200);</string>
+        </property>
+       </widget>
+       <zorder>word_style_2</zorder>
+       <zorder>word_style</zorder>
+       <zorder>horizontalLayoutWidget</zorder>
+      </widget>
+     </item>
+     <item>
+      <widget class="QFrame" name="show_window">
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+       <widget class="QWidget" name="show_widget_back" native="true">
+        <property name="geometry">
+         <rect>
+          <x>9</x>
+          <y>9</y>
+          <width>2391</width>
+          <height>951</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color:rgba(39, 40, 34, 80);
+border-radius: 30px;
+border-style:outset;
+</string>
+        </property>
+       </widget>
+       <widget class="QWidget" name="widget_4" native="true">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>20</y>
+          <width>2371</width>
+          <height>931</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color:rgba(0,0,0,0);</string>
+        </property>
+        <widget class="QWidget" name="horizontalLayoutWidget_3">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>2371</width>
+           <height>151</height>
+          </rect>
+         </property>
+         <layout class="QHBoxLayout" name="input_info_layout" stretch="3,2">
+          <property name="leftMargin">
+           <number>10</number>
+          </property>
+          <property name="topMargin">
+           <number>10</number>
+          </property>
+          <property name="rightMargin">
+           <number>10</number>
+          </property>
+          <property name="bottomMargin">
+           <number>10</number>
+          </property>
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_5">
+            <item>
+             <widget class="QLabel" name="prompt_info">
+              <property name="styleSheet">
+               <string notr="true">background-color:none;
+font: 14pt &quot;Lucida Handwriting&quot;;
+color:rgb(248, 248, 242);</string>
+              </property>
+              <property name="text">
+               <string>当前输入为：A Cat is dancing.</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <widget class="QLabel" name="pic_nums">
+            <property name="styleSheet">
+             <string notr="true">background-color:none;
+font: 14pt &quot;Lucida Handwriting&quot;;
+color:rgb(248, 248, 242);</string>
+            </property>
+            <property name="text">
+             <string>正在生成3张图片...
+（生成图片张数可在“更多参数修改”按钮处修改）</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="gallery" native="true">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>200</y>
+           <width>2361</width>
+           <height>731</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color:none;</string>
+         </property>
+         <widget class="QScrollArea" name="scroll_area_images">
+          <property name="geometry">
+           <rect>
+            <x>-1</x>
+            <y>-1</y>
+            <width>2361</width>
+            <height>721</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:transparent;</string>
+          </property>
+          <property name="widgetResizable">
+           <bool>true</bool>
+          </property>
+          <widget class="QWidget" name="scrollAreaImagesWidgetContents">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>2359</width>
+             <height>719</height>
+            </rect>
+           </property>
+          </widget>
+         </widget>
+        </widget>
+       </widget>
+      </widget>
+     </item>
+     <item>
+      <widget class="QFrame" name="set_window">
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+       <widget class="QWidget" name="widget_2" native="true">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>-10</y>
+          <width>2400</width>
+          <height>210</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">
+border-radius: 50px;
+border-style:outset;
+</string>
+        </property>
+        <widget class="QWidget" name="verticalLayoutWidget_2">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>20</y>
+           <width>2401</width>
+           <height>201</height>
+          </rect>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_2" stretch="0,0,0">
+          <item>
+           <widget class="QLabel" name="label">
+            <property name="styleSheet">
+             <string notr="true">font: 14pt &quot;Lucida Handwriting&quot;;
+color:rgb(249, 38, 114, 200);
+background-color:rgba(39, 40, 34, 150);
+border-radius: 30px;</string>
+            </property>
+            <property name="text">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;----------------------------- &lt;span style=&quot; font-weight:600;&quot;&gt;模型参数设置 Model Parameters set&lt;/span&gt; ------------------------------- &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+            <property name="textFormat">
+             <enum>Qt::RichText</enum>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="0,1,0,1,0,1,0,1,0">
+            <property name="sizeConstraint">
+             <enum>QLayout::SetDefaultConstraint</enum>
+            </property>
+            <item>
+             <spacer name="horizontalSpacer_3">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QPushButton" name="change_decoder_btn">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>80</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton{         
+	border-radius:30px;
+font: 14pt &quot;Lucida Handwriting&quot;;
+	color:rgb(248, 248, 242);      
+	padding:6px;             
+}
+
+QPushButton:pressed{
+	border-color:rgba(249, 38, 114, 250);
+	background-color:rgba(249, 38, 114, 255);   
+	border:3px solid rgba(249, 38, 114, 250);
+	color:rgb(249, 38, 114, 250);
+}
+
+QPushButton:hover{
+	background-color:rgba(255, 255, 255, 10);
+	border:3px solid rgba(249, 38, 114, 200);
+	color:rgb(249, 38, 114, 250);
+}</string>
+              </property>
+              <property name="text">
+               <string>更改decoder的大小</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer_4">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QPushButton" name="upload_file_btn">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>80</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton{         
+	border-radius:30px;
+font: 14pt &quot;Lucida Handwriting&quot;;
+	color:rgb(248, 248, 242);      
+	padding:6px;             
+}
+
+QPushButton:pressed{
+	border-color:rgba(249, 38, 114, 250);
+	background-color:rgba(249, 38, 114, 255);   
+	border:3px solid rgba(249, 38, 114, 250);
+	color:rgb(249, 38, 114, 250);
+}
+
+QPushButton:hover{
+	background-color:rgba(255, 255, 255, 10);
+	border:3px solid rgba(249, 38, 114, 200);
+	color:rgb(249, 38, 114, 250);
+}</string>
+              </property>
+              <property name="text">
+               <string>上传输入文本</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer_5">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QPushButton" name="download_img_btn">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>80</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton{         
+	border-radius:30px;
+font: 14pt &quot;Lucida Handwriting&quot;;
+	color:rgb(248, 248, 242);      
+	padding:6px;             
+}
+
+QPushButton:pressed{
+	border-color:rgba(249, 38, 114, 250);
+	background-color:rgba(249, 38, 114, 255);   
+	border:3px solid rgba(249, 38, 114, 250);
+	color:rgb(249, 38, 114, 250);
+}
+
+QPushButton:hover{
+	background-color:rgba(255, 255, 255, 10);
+	border:3px solid rgba(249, 38, 114, 200);
+	color:rgb(249, 38, 114, 250);
+}</string>
+              </property>
+              <property name="text">
+               <string>下载生成图像</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer_8">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QPushButton" name="set_paras">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>80</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton{         
+	border-radius:30px;
+font: 14pt &quot;Lucida Handwriting&quot;;
+	color:rgb(248, 248, 242);      
+	padding:6px;             
+}
+
+QPushButton:pressed{
+	border-color:rgba(249, 38, 114, 250);
+	background-color:rgba(249, 38, 114, 255);   
+	border:3px solid rgba(249, 38, 114, 250);
+	color:rgb(249, 38, 114, 250);
+}
+
+QPushButton:hover{
+	background-color:rgba(255, 255, 255, 10);
+	border:3px solid rgba(249, 38, 114, 200);
+	color:rgb(249, 38, 114, 250);
+}</string>
+              </property>
+              <property name="text">
+               <string>更多参数修改</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer_9">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <spacer name="verticalSpacer">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </widget>
+       </widget>
+      </widget>
+     </item>
+    </layout>
+    <zorder>set_window</zorder>
+    <zorder>input_frame</zorder>
+    <zorder>show_window</zorder>
+   </widget>
+   <widget class="QWidget" name="widget" native="true">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>2500</width>
+      <height>1460</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgba(26, 27, 24, 200);</string>
+    </property>
+   </widget>
+   <widget class="QWidget" name="back_img" native="true">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>2500</width>
+      <height>1460</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-image:url(:/imgs/static/img2.jpg)</string>
+    </property>
+   </widget>
+   <zorder>back_img</zorder>
+   <zorder>widget</zorder>
+   <zorder>verticalLayoutWidget</zorder>
+  </widget>
+ </widget>
+ <resources>
+  <include location="src_file.qrc"/>
+ </resources>
+ <connections/>
+</ui>

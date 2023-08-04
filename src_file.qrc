@@ -1,0 +1,21 @@
+<RCC>
+  <qresource prefix="imgs">
+    <file>static/waring_icon.png</file>
+    <file>static/select.png</file>
+    <file>static/info_white.png</file>
+    <file>static/explaination.png</file>
+    <file>static/modelmini_unhover.png</file>
+    <file>static/down_fill1.png</file>
+    <file>static/down_fill2.png</file>
+    <file>static/arrow_up_fill.png</file>
+    <file>static/model.png</file>
+    <file>static/model_hover.png</file>
+    <file>static/model_unhover.png</file>
+    <file>static/model-reprocessing.png</file>
+    <file>static/model-reprocessing_unhover.png</file>
+    <file>static/up_fill.png</file>
+    <file>static/down_fill.png</file>
+    <file>static/img1.jpg</file>
+    <file>static/img2.jpg</file>
+  </qresource>
+</RCC>
